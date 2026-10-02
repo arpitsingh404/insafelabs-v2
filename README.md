@@ -4,6 +4,8 @@ Full-stack security testing platform: **FastAPI + MongoDB** backend, **React (CR
 Local-only by default (localhost) — see [`LOCAL_SETUP.md`](./LOCAL_SETUP.md) for the detailed change log
 and hardening notes.
 
+![InsafeLabs — Operations Overview](docs/screenshots/console.png)
+
 ---
 
 ## Stack
@@ -36,6 +38,7 @@ and hardening notes.
 │   ├── public/
 │   └── package.json       # scripts: start / build / test (craco)
 ├── LOCAL_SETUP.md         # local setup + change log
+├── docs/screenshots/      # README screenshots
 └── tests/                 # extra test harness
 ```
 
@@ -49,25 +52,52 @@ and hardening notes.
 
 ## Features
 
-- **Operations Overview** — KPI cards, threat map, findings-by-module chart, pipeline panel,
-  trend ranges (7/14d), severity quick-filters, export snapshot, auto-refresh (15/30/60s).
-- **AI Agent** (`/app/ai-agent`) — the LLM plans a sequence of built-in tools
-  (web_scan, injection, ssti/lfi/cmdi checks, param_discovery, auth_form, tls_scan,
-  dns_recon, email_security, subdomain_enum, port_scan, fingerprint, cors_test, …),
-  the app executes them, and the AI writes the final Markdown report.
-- **All Tools** (`/app/all-tools`) — ~130 domain/DNS, email-security, network, developer,
-  validation, formatter and converter utilities. Converters run locally in the browser;
-  network tools use the backend (DNS-over-HTTPS, RDAP/WHOIS, TLS, port and HTTP-header checks).
-- **Vuln Suite** (`/app/vuln-suite`) — native, in-app, non-destructive: Web Scan, Injection
-  (SQLi/XSS/CRLF/open-redirect), Params, TLS, DNS/AXFR, Wordlist generator.
-- **Arsenal** (`/app/arsenal`) — catalog of **95 tools** across 19 categories with host
+- **Operations Overview** (`/app`) — live telemetry: KPI cards, threat map, DEFCON-style threat
+  condition, findings-by-module chart, pipeline panel, trend ranges (7/14d), severity
+  quick-filters, export snapshot, auto-refresh (15/30/60s) and a command palette.
+- **All Tools** (`/app/all-tools`) — 12 categories, ~131 utilities: domain/DNS, email-security,
+  network, validation, formatter, content, developer, thread-dump, converter and cloud tools.
+  Converters and formatters run **locally in the browser**; network tools use the backend
+  (DNS-over-HTTPS, RDAP/WHOIS, TLS, port and HTTP-header checks).
+- **Vuln Suite** (`/app/vuln-suite`) — native, in-app, non-destructive testing: Web Scan,
+  Injection (SQLi/XSS/CRLF/open-redirect), **SSTI**, **LFI / path-traversal**, **command injection**,
+  Params, VHost, Auth Form, Rate-Limit, **IDOR**, TLS, DNS/AXFR, Wordlist, **IOC extractor**,
+  **favicon fingerprint**, **CIDR/PTR sweep**, **OpenAPI analyzer** and **XXE**.
+- **AI Agent** (`/app/ai-agent`) — the LLM plans and runs 26 built-in tools, then writes the final
+  Markdown report (human-supervised, tool-calling only).
+- **Playbooks** (`/app/playbooks`) — one-click multi-step workflows (recon, web-deep, TLS, …).
+- **SOC** (`/app/soc`) — health overview, IOC / blacklist watchlist and alerts.
+- **VAPT** / **WAPT** (`/app/vapt`, `/app/wapt`) — full web / API assessment engines (OWASP Top 10, PTES).
+- **Kill Chain** (`/app/kill-chain`) — MITRE-style phase-by-phase operation map with tool shortcuts.
+- **Proxy Chain** (`/app/proxy-chain`) — multi-hop proxy testing and chaining.
+- **NDA / Legal** (`/app/legal`) — generate NDA / RoE / scope-letter documents (`.md` + `.pdf`) with auto-fill.
+- **Recon Lab** (`/app/recon`) — DNS, SPF/DMARC/DKIM, subdomain enumeration and takeover checks.
+- **Arsenal** (`/app/arsenal`) — catalog of **95 security tools** across 19 categories with host
   auto-detection and a strict shell-free (argv-only) runner.
-- **Recon Lab**, **Crypto Lab**, **Web Inspector**, **Bug Bounty**, **Red Team**, **SCA**.
-- **Agent Desk** (`/app/agents`) — orchestrator auto-plans concurrent agents (Recon,
-  Subdomain, Port-Scanner, WebVuln, …), then AI Red-Team + Report phases, with a live 3D
-  operations room, timeline, stop/resume, and per-op spend tracking.
+- Plus **AI Pentest**, **Bug Bounty**, **Red Team Ops**, **AD / LDAP**, **Network Map**, **Reverse Eng**,
+  **OSINT**, **Crypto Lab**, **Web Inspector**, **Agent Desk** (live 3D operations room), **USB Bridge**,
+  **Code Review**, **SCA**, **Findings**, **Operation Report**, **Gesture Control**, **Settings** and **Guide**.
 - **Command palette** (`Ctrl/⌘ + K`), accent theme switcher, collapsible sidebar,
-  keyboard shortcuts (`R` refresh, `/` focus filter), and an `ErrorBoundary`.
+  keyboard shortcuts (`R` refresh, `/` focus filter) and an `ErrorBoundary`.
+
+---
+
+## Screenshots
+
+<table>
+  <tr>
+    <td align="center"><b>Login</b><br><img src="docs/screenshots/login.png" alt="Login" width="430"></td>
+    <td align="center"><b>Operations Overview</b><br><img src="docs/screenshots/console.png" alt="Operations Overview" width="430"></td>
+  </tr>
+  <tr>
+    <td align="center"><b>All Tools — 131 utilities</b><br><img src="docs/screenshots/all-tools.png" alt="All Tools" width="430"></td>
+    <td align="center"><b>Vuln Suite — 18 native checks</b><br><img src="docs/screenshots/vuln-suite.png" alt="Vuln Suite" width="430"></td>
+  </tr>
+  <tr>
+    <td align="center"><b>AI Agent — 26 tools</b><br><img src="docs/screenshots/ai-agent.png" alt="AI Agent" width="430"></td>
+    <td align="center"><b>Arsenal — 95-tool catalog</b><br><img src="docs/screenshots/arsenal.png" alt="Arsenal" width="430"></td>
+  </tr>
+</table>
 
 ---
 
