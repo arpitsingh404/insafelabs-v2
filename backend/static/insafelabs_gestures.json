@@ -1,0 +1,32 @@
+{
+  "_readme": "InsafeLabs gesture config. Edit 'bindings' to map any gesture to your own action, then press 'r' in the camera window to hot-reload. Supported gestures: fist, open_palm, point, victory, three, four, pinky, rock, call_me, l_shape, spiderman, thumb_up, thumb_down, pinch, pinch_hold. Supported actions: click, double_click, drag, scroll, hotkey, press, type, media, launch, screenshot, window, pause_toggle, none. Add 'hold': false to any binding to fire it instantly instead of after a ~1s hold.",
+  "settings": {
+    "camera": 0,
+    "edge_reach": 0.18,
+    "smoothing": 0.35,
+    "pinch_threshold": 0.055,
+    "hold_seconds": 1.0,
+    "cooldown_seconds": 1.5,
+    "scroll_speed": 1.0,
+    "mirror": true,
+    "move_cursor": true,
+    "start_paused": false,
+    "max_hands": 1
+  },
+  "bindings": {
+    "pinch":      { "action": "click", "button": "left", "hold": false },
+    "pinch_hold": { "action": "drag", "hold": false },
+    "thumb_up":   { "action": "scroll", "amount": 1, "hold": false },
+    "thumb_down": { "action": "scroll", "amount": -1, "hold": false },
+    "open_palm":  { "action": "click", "button": "right", "hold": true },
+    "fist":       { "action": "screenshot", "dir": "~/Pictures", "hold": true },
+    "victory":    { "action": "window", "op": "switch", "hold": true },
+    "three":      { "action": "hotkey", "keys": "ctrl+c", "hold": true },
+    "four":       { "action": "media", "key": "playpause", "hold": true },
+    "pinky":      { "action": "media", "key": "volup", "hold": true },
+    "rock":       { "action": "media", "key": "voldown", "hold": true },
+    "call_me":    { "action": "launch", "app": "notepad", "hold": true },
+    "l_shape":    { "action": "hotkey", "keys": "ctrl+v", "hold": true },
+    "spiderman":  { "action": "pause_toggle", "hold": true }
+  }
+}
