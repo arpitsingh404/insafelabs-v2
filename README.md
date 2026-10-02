@@ -174,6 +174,18 @@ cd backend
 
 ---
 
+## License
+
+Released under the [MIT License](./LICENSE) — © 2026 Arpit Singh.
+
+> **Authorized use only.** InsafeLabs is provided for lawful, authorized security
+> testing — your own systems, or systems you have explicit **written permission** to test.
+> The authors accept no liability for misuse or damage. You are responsible for complying
+> with all applicable laws.
+
+---
+
 ## Docs
 
 - [`LOCAL_SETUP.md`](./LOCAL_SETUP.md) — local setup, change log and hardening notes
+- [`LICENSE`](./LICENSE) — MIT
