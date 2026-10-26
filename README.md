@@ -1,8 +1,15 @@
 # InsafeLabs — Offensive Security Platform
 
+[![FastAPI](https://img.shields.io/badge/FastAPI-Python-009688?logo=fastapi&logoColor=white)](#stack)
+[![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)](#stack)
+[![MongoDB](https://img.shields.io/badge/MongoDB-local-47A248?logo=mongodb&logoColor=white)](#stack)
+[![License: MIT](https://img.shields.io/badge/license-MIT-2ea44f)](LICENSE)
+
 Full-stack security testing platform: **FastAPI + MongoDB** backend, **React (CRA + CRACO)** frontend.
 Local-only by default (localhost) — see [`LOCAL_SETUP.md`](./LOCAL_SETUP.md) for the detailed change log
 and hardening notes.
+
+**Repository:** <https://github.com/arpitsingh404/insafelabs-v2>
 
 ![InsafeLabs — Operations Overview](docs/screenshots/console.png)
 
@@ -177,6 +184,9 @@ cd backend
 ## License
 
 Released under the [MIT License](./LICENSE) — © 2026 Arpit Singh.
+
+- GitHub: [@arpitsingh404](https://github.com/arpitsingh404)
+- Repository: [insafelabs-v2](https://github.com/arpitsingh404/insafelabs-v2)
 
 > **Authorized use only.** InsafeLabs is provided for lawful, authorized security
 > testing — your own systems, or systems you have explicit **written permission** to test.
